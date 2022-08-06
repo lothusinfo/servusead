@@ -598,7 +598,7 @@ return [
     'general_card_title' => 'Geral',
     'general_card_hint' => 'Alterar título do site, logotipo, idioma, RTL, contas sociais, estilos de design, pré-carregamento.',
     'financial_card_title' => 'Financeiro',
-    'financial_card_hint' => 'Definir momissões, impostos, pagamento, moeda, gateways de pagamento, pagamento offline',
+    'financial_card_hint' => 'Definir comissões, impostos, pagamento, moeda, gateways de pagamento, pagamento offline',
     'personalization_card_title' => 'Personalização',
     'personalization_card_hint' => 'Alterar fundos de página, seções iniciais, estilos de Hero, imagens e textos.',
     'notifications_card_title' => 'Notificações',

@@ -26,8 +26,8 @@ class SessionController extends Controller
             'date' => 'required|date',
             'duration' => 'required|numeric',
             'link' => ($data['session_api'] == 'local') ? 'required|url' : 'nullable',
-            'api_secret' => (($data['session_api'] != 'zoom') and ($data['session_api'] != 'agora')) ? 'required' : 'nullable',
-            'moderator_secret' => ($data['session_api'] == 'big_blue_button') ? 'required' : 'nullable',
+            'api_secret' => /*(($data['session_api'] != 'zoom') and ($data['session_api'] != 'agora')) ? 'required' : */'nullable',
+            'moderator_secret' => /*($data['session_api'] == 'big_blue_button') ? 'required' : */'nullable',
         ]);
 
         if ($validator->fails()) {
@@ -85,8 +85,10 @@ class SessionController extends Controller
                     'extra_time_to_join' => $data['extra_time_to_join'] ?? null,
                     'link' => $data['link'] ?? '',
                     'session_api' => $data['session_api'],
-                    'api_secret' => $data['api_secret'] ?? '',
-                    'moderator_secret' => $data['moderator_secret'] ?? '',
+                    // 'api_secret' => $data['api_secret'] ?? '',
+                    'api_secret' =>  rand(0, 99999999),
+                    // 'moderator_secret' => $data['moderator_secret'] ?? '',
+                    'moderator_secret' =>rand(0, 99999999),
                     'check_previous_parts' => $data['check_previous_parts'],
                     'access_after_day' => $data['access_after_day'],
                     'status' => (!empty($data['status']) and $data['status'] == 'on') ? Session::$Active : Session::$Inactive,
@@ -203,7 +205,7 @@ class SessionController extends Controller
                     'extra_time_to_join' => $data['extra_time_to_join'] ?? null,
                     'link' => $data['link'] ?? $session->link,
                     'session_api' => $session_api,
-                    'api_secret' => $data['api_secret'] ?? $session->api_secret,
+                    'api_secret' => $data['api_secret'] ?? ($session->api_secret ?? rand(0, 99999999)),
                     'status' => (!empty($data['status']) and $data['status'] == 'on') ? Session::$Active : Session::$Inactive,
                     'agora_settings' => $agoraSettings,
                     'check_previous_parts' => $data['check_previous_parts'],

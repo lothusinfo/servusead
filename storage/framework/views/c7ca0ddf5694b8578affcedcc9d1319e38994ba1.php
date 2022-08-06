@@ -83,7 +83,7 @@
         var defaultItemId = '<?php echo e(request()->get('item')); ?>'
         var loadFirstContent = <?php echo e((!empty($dontAllowLoadFirstContent) and $dontAllowLoadFirstContent) ? 'false' : 'true'); ?>; // allow to load first content when request item is empty
 
-        var courseUrl = 'blablabla';
+        var courseUrl = '<?php echo e($course->getUrl()); ?>';
 
         // lang
         var pleaseWaitForTheContentLang = '<?php echo e(trans('update.please_wait_for_the_content_to_load')); ?>';

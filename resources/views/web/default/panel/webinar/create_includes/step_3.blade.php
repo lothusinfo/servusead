@@ -39,7 +39,7 @@
             @enderror
         </div>
 
-        @if($authUser->isOrganization() and $authUser->id == $webinar->creator_id)
+        {{-- @if($authUser->isOrganization() and $authUser->id == $webinar->creator_id)
             <div class="form-group mt-15">
                 <label class="input-label">{{ trans('update.organization_price') }}</label>
                 <input type="number" name="organization_price" value="{{ !empty($webinar) ? $webinar->organization_price : old('organization_price') }}" class="form-control @error('organization_price')  is-invalid @enderror" placeholder=""/>
@@ -50,7 +50,7 @@
                 @enderror
                 <p class="font-12 text-gray mt-5">- {{ trans('update.organization_price_hint') }}</p>
             </div>
-        @endif
+        @endif --}}
     </div>
 </div>
 

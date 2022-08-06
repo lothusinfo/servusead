@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f550c7794df18ee44596abcb44be80d4",
+    "content-hash": "aaa1d99f04c3d15fdc7aa978a6144059",
     "packages": [
         {
             "name": "akcybex/laravel-jazzcash",
@@ -347,16 +347,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.231.18",
+            "version": "3.232.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "76db7b327e023c7bbce77a0bfc9fb4d559e765b3"
+                "reference": "390ceb3372ffb9f834694e2bd76a36a78ed7d2ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/76db7b327e023c7bbce77a0bfc9fb4d559e765b3",
-                "reference": "76db7b327e023c7bbce77a0bfc9fb4d559e765b3",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/390ceb3372ffb9f834694e2bd76a36a78ed7d2ee",
+                "reference": "390ceb3372ffb9f834694e2bd76a36a78ed7d2ee",
                 "shasum": ""
             },
             "require": {
@@ -433,9 +433,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.231.18"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.232.2"
             },
-            "time": "2022-08-01T18:18:21+00:00"
+            "time": "2022-08-04T18:17:49+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -520,64 +520,6 @@
                 }
             ],
             "time": "2022-07-11T09:26:42+00:00"
-        },
-        {
-            "name": "bigbluebutton/bigbluebutton-api-php",
-            "version": "2.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bigbluebutton/bigbluebutton-api-php.git",
-                "reference": "ecb3913e307183aa75f2efa2af226f758ae80d3e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bigbluebutton/bigbluebutton-api-php/zipball/ecb3913e307183aa75f2efa2af226f758ae80d3e",
-                "reference": "ecb3913e307183aa75f2efa2af226f758ae80d3e",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-mbstring": "*",
-                "ext-simplexml": "*",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "ext-mbstring": "*",
-                "fakerphp/faker": "^1.17",
-                "friendsofphp/php-cs-fixer": "^3.8.0",
-                "php-coveralls/php-coveralls": "^2.5.2",
-                "phpunit/phpunit": "^8.5",
-                "squizlabs/php_codesniffer": "^3.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "BigBlueButton\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Ghazi Triki",
-                    "email": "ghazi.triki@riadvice.tn",
-                    "role": "Developer"
-                }
-            ],
-            "description": "BigBlueButton PHP API Library for PHP",
-            "homepage": "http://bigbluebutton.org/",
-            "keywords": [
-                "api",
-                "bbb",
-                "bigbluebutton"
-            ],
-            "support": {
-                "issues": "https://github.com/bigbluebutton/bigbluebutton-api-php/issues",
-                "source": "https://github.com/bigbluebutton/bigbluebutton-api-php/tree/2.1.4"
-            },
-            "time": "2022-06-17T10:21:54+00:00"
         },
         {
             "name": "bitpay/key-utils",
@@ -3252,26 +3194,26 @@
         },
         {
             "name": "joisarjignesh/bigbluebutton",
-            "version": "v1.2.5",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joisarjignesh/bigbluebutton.git",
-                "reference": "5dd9367b3766b871b064b123a2d0dad2533652f5"
+                "reference": "302ef4db4cae0298544c48eab34bc4f3eb1a4475"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joisarjignesh/bigbluebutton/zipball/5dd9367b3766b871b064b123a2d0dad2533652f5",
-                "reference": "5dd9367b3766b871b064b123a2d0dad2533652f5",
+                "url": "https://api.github.com/repos/joisarjignesh/bigbluebutton/zipball/302ef4db4cae0298544c48eab34bc4f3eb1a4475",
+                "reference": "302ef4db4cae0298544c48eab34bc4f3eb1a4475",
                 "shasum": ""
             },
             "require": {
-                "bigbluebutton/bigbluebutton-api-php": "^2.0",
-                "illuminate/support": "^5.5|^6.0|^7.0|^8.0",
-                "php": ">=7.0"
+                "illuminate/support": "^5.5|^6.0|^7.0|^8.0|^9.0",
+                "littleredbutton/bigbluebutton-api-php": "dev-master",
+                "php": "^7.4|^8.0|^8.1"
             },
             "require-dev": {
-                "orchestra/testbench": "^4.0",
-                "phpunit/phpunit": "^8.0"
+                "orchestra/testbench": "^4.0|^7.0",
+                "phpunit/phpunit": "^8.0|^9.0"
             },
             "type": "library",
             "extra": {
@@ -3332,7 +3274,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-10-10T09:37:57+00:00"
+            "time": "2022-03-22T19:01:46+00:00"
         },
         {
             "name": "jorenvanhocht/laravel-share",
@@ -4439,6 +4381,134 @@
                 }
             ],
             "time": "2021-06-05T11:34:12+00:00"
+        },
+        {
+            "name": "littleredbutton/bigbluebutton-api-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/littleredbutton/bigbluebutton-api-php.git",
+                "reference": "ea8c6fa7676d9876b13d12be496b6f5b5a6cf4d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/littleredbutton/bigbluebutton-api-php/zipball/ea8c6fa7676d9876b13d12be496b6f5b5a6cf4d9",
+                "reference": "ea8c6fa7676d9876b13d12be496b6f5b5a6cf4d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-simplexml": "*",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.4",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0",
+                "symfony/dotenv": "^3.4|^4.0|^5.0",
+                "symfony/http-client": "^4.4|^5.0",
+                "symfony/http-client-contracts": "^1.1|^2.0",
+                "symfony/process": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "psr/http-client-implementation": "To use the PsrHttpClientTransport.",
+                "psr/http-factory-implementation": "To use the PsrHttpClientTransport.",
+                "psr/http-message": "To use the PsrClientHttpTransport.",
+                "symfony/http-client": "To use the SymfonyHttpClientTransport.",
+                "symfony/http-client-contracts": "To use the SymfonyHttpClientTransport."
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "hooks": {
+                    "pre-commit": [
+                        "tools/php-cs-fixer fix --dry-run --allow-risky=yes"
+                    ],
+                    "pre-push": [
+                        "tools/phpunit --testsuite=\"BigBlueButton unit test suite,BigBlueButton integration test suite\"",
+                        "tools/psalm --threads=1"
+                    ],
+                    "post-merge": "composer install",
+                    "post-checkout": "composer install"
+                },
+                "cotor": {
+                    "brainmaestro/composer-git-hooks": "^2.8",
+                    "extensions": {
+                        "phpunit/phpunit": {
+                            "fakerphp/faker": "^1.14"
+                        }
+                    },
+                    "friendsofphp/php-cs-fixer": "^3.3",
+                    "php-coveralls/php-coveralls": "^2.4",
+                    "phpunit/phpunit": "^8",
+                    "vimeo/psalm": "^4.22"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BigBlueButton\\": [
+                        "src",
+                        "tests/integration"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ghazi Triki",
+                    "email": "ghazi.triki@riadvice.tn",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Klaus Herberth",
+                    "email": "klaus@jsxc.org",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Samuel Weirich",
+                    "email": "samuel@coding-space.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jignesh Joisar",
+                    "email": "jigneshjoisar@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Pablo Ogando",
+                    "email": "pablo.ogando@teltek.es",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Alfonso Rodríguez",
+                    "email": "arodriguez@teltek.es",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Felix Jacobi",
+                    "email": "felix@jacobi-hamburg.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "BigBlueButton PHP API Library for PHP",
+            "homepage": "http://bigbluebutton.org/",
+            "keywords": [
+                "api",
+                "bbb",
+                "bigbluebutton"
+            ],
+            "support": {
+                "docs": "https://github.com/littleredbutton/bigbluebutton-api-php/blob/master/README.md",
+                "issues": "https://github.com/littleredbutton/bigbluebutton-api-php/issues",
+                "source": "https://github.com/littleredbutton/bigbluebutton-api-php/"
+            },
+            "time": "2022-06-10T18:50:51+00:00"
         },
         {
             "name": "lokielse/omnipay-global-alipay",
@@ -5653,16 +5723,16 @@
         },
         {
             "name": "myclabs/php-enum",
-            "version": "1.8.3",
+            "version": "1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/php-enum.git",
-                "reference": "b942d263c641ddb5190929ff840c68f78713e937"
+                "reference": "a867478eae49c9f59ece437ae7f9506bfaa27483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/b942d263c641ddb5190929ff840c68f78713e937",
-                "reference": "b942d263c641ddb5190929ff840c68f78713e937",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/a867478eae49c9f59ece437ae7f9506bfaa27483",
+                "reference": "a867478eae49c9f59ece437ae7f9506bfaa27483",
                 "shasum": ""
             },
             "require": {
@@ -5678,7 +5748,10 @@
             "autoload": {
                 "psr-4": {
                     "MyCLabs\\Enum\\": "src/"
-                }
+                },
+                "classmap": [
+                    "stubs/Stringable.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -5697,7 +5770,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/php-enum/issues",
-                "source": "https://github.com/myclabs/php-enum/tree/1.8.3"
+                "source": "https://github.com/myclabs/php-enum/tree/1.8.4"
             },
             "funding": [
                 {
@@ -5709,7 +5782,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-05T08:18:36+00:00"
+            "time": "2022-08-04T09:53:51+00:00"
         },
         {
             "name": "myonlinestore/omnipay-klarna-checkout",

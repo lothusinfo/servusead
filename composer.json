@@ -27,7 +27,7 @@
         "irakan/paylink": "^1.1",
         "iyzico/iyzipay-php": "^2.0",
         "james-heinrich/getid3": "^1.9",
-        "joisarjignesh/bigbluebutton": "^1.1",
+        "joisarjignesh/bigbluebutton": "^2.3",
         "jorenvanhocht/laravel-share": "^4.0",
         "kingflamez/laravelrave": "^4.2",
         "laravel/framework": "^7.0",

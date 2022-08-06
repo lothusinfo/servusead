@@ -59,7 +59,7 @@ return [
          *
          * var @string
          */
-        'logoutUrl'                          => null,
+        'logoutUrl'                          => env('APP_URL') . 'classes',
 
         /**
          * Setting ‘record=true’ instructs the BigBlueButton server to record the media and
