@@ -33,7 +33,7 @@ return [
     'status' => 'Estado',
     'all_status' => 'Todos os status',
     'logout' => 'Sair',
-    'show_website' => 'Site de Mostar',
+    'show_website' => 'Mostar o site',
     'type' => 'Modelo',
     'types' => 'Modelos',
     'all_types' => 'Todos os tipos',

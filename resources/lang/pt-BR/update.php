@@ -687,4 +687,8 @@ return [
     'access_after_day_placeholder' => 'Digite a quantidade de dias',
     'add_new_assignments' => 'Adicionar novas tarefas',
     'extra_time_to_join' => 'Limite de tempo para participar',
+    'my_assignments' => 'Minhas atribuições',
+    'my_assignments_no_result' => 'Nenhum resultado para atribuições',
+    'my_assignments_no_result_hint_student' => 'Cadastre novas atribuições para visualizá-las aqui',
+    
 ];

@@ -17,7 +17,7 @@ class SendMessege
                 CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Accept:application/json'],
                 CURLOPT_POST => 1,
                 CURLOPT_POSTFIELDS => json_encode([
-                    "botnumber" => "559885613291@c.us",
+                    "botnumber" => "559830221830@c.us",
                     "batch"     => rand(300, 9999),
                     "destiny"   => $this->numeroAjuste($data['mobile']),
                     "message"   => $data['message'],

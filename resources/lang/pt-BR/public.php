@@ -204,7 +204,7 @@ return [
     'continue' => 'Continuar',
     'submit' => 'Salvar',
     'new' => 'Novo',
-    'history' => 'História',
+    'history' => 'Histórico',
     'item_id' => 'ID do item',
     'export_list' => 'Exportar lista de alunos',
     'duplicate' => 'Duplicado',
