@@ -59,7 +59,7 @@ return [
          *
          * var @string
          */
-        'logoutUrl'                          => env('APP_URL') . 'classes',
+        'logoutUrl'                          => true,
 
         /**
          * Setting ‘record=true’ instructs the BigBlueButton server to record the media and
@@ -71,7 +71,7 @@ return [
          * See also the autoStartRecording and allowStartStopRecording parameters
          * var @bool
          */
-        'record'                             => false,
+        'record'                             => true,
 
         /**
          * The maximum length (in minutes) for the meeting.

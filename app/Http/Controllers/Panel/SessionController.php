@@ -292,6 +292,9 @@ class SessionController extends Controller
             'meetingName' => $session->title,
             'attendeePW' => $session->api_secret,
             'moderatorPW' => $session->moderator_secret,
+            'logoutUrl' => 'https://ead.servus.org.br',
+            'allowStartStopRecording' => true,
+            'record' => true
         ]);
         
         $createMeeting->setDuration($session->duration);

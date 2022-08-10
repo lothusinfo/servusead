@@ -690,5 +690,8 @@ return [
     'my_assignments' => 'Minhas atribuições',
     'my_assignments_no_result' => 'Nenhum resultado para atribuições',
     'my_assignments_no_result_hint_student' => 'Cadastre novas atribuições para visualizá-las aqui',
-    
+    'private_content' => 'Conteúdo privado',
+    'private_content_login_hint' => 'É necessário fazer login primeiro',
+    'your_students_assignments' => 'Atribuições dos seus alunos',
+    'my_assignments_no_result_hint' => '',
 ];
