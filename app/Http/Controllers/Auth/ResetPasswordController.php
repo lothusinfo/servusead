@@ -77,7 +77,7 @@ class ResetPasswordController extends Controller
                 'message' => "_*SERVUS EAD*_\n\nA paz do Senhor Jesus Cristo!\n_Senha redefinida com sucesso!_\n\n‼️ Caso não tenha sido você quem redefiniu, *sua conta pode estar em perigo*. Entre em contato com conosco por meio deste número mesmo, basta solicitar um atendimento. \nEstamos sempre à disposição para lhe ajudar no que você precisar!\n\nFique na paz de Cristo."
             ];
             $botLothus = new SendMessege();
-            $botLothus->api_sendZap($dataSendBot);
+            // $botLothus->api_sendZap($dataSendBot);
 
             return redirect('/login')->with(['toast' => $toastData]);
         }

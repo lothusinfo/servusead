@@ -58,7 +58,7 @@ class VerificationController extends Controller
                     'message' => "A paz do Senhor, " . $user->full_name . "!\n\nEstamos felizes e gratos por você ter escolhido nossa plataforma!\nPara confirmar seu cadastro no _*Servus EaD*_, digite o seguinte código de verificação abaixo:\n" . $verification['code'] . "\nVocê também pode obtê-lo no seu endereço de email cadastrado: " . $user->email . ".\n\n\n\nDesejamos um excelente estudo das Sagradas Escrituras!"
                 ];
                 $botLothus = new SendMessege();
-                $botLothus->api_sendZap($dataSendBot);
+                // $botLothus->api_sendZap($dataSendBot);
                 $verification->sendEmailCode();
 
                 return redirect('/verification');
@@ -116,7 +116,7 @@ class VerificationController extends Controller
                 'message' => "A paz do Senhor, " . $user->full_name . "!\n\nEstamos felizes e gratos por você ter escolhido nossa plataforma!\nPara confirmar seu cadastro no _*Servus EaD*_, digite o seguinte código de verificação abaixo:\n" . $data['code'] . "\nVocê também pode obtê-lo no seu endereço de email cadastrado: " . $user->email . ".\n\n\n\nDesejamos um excelente estudo das Sagradas Escrituras!"
             ];
             $botLothus = new SendMessege();
-            $botLothus->api_sendZap($dataSendBot);
+            // $botLothus->api_sendZap($dataSendBot);
             $verification->sendEmailCode();
 
             return [
@@ -187,7 +187,7 @@ class VerificationController extends Controller
                         'message' => "Glória a Deus! 🙌\n" . $user->full_name . ", seu cadastro foi confirmado com sucesso.\nAproveite todos os nossos cursos! Estamos sempre à disposição para lhe ajudar no que você precisar!\n\nAh, e não deixe de olhar nossa loja virtual, aí mesmo na plataforma!\nFique na paz de Cristo."
                     ];
                     $botLothus = new SendMessege();
-                    $botLothus->api_sendZap($dataSendBot);
+                    // $botLothus->api_sendZap($dataSendBot);
 
                     return $loginController->afterLogged($request, true);
                 }

@@ -150,7 +150,7 @@ class LoginController extends Controller
                     'message' => "A paz do Senhor!\n" . $user->full_name . ", sua conta na plataforma *Servus EaD*, cujo email de cadastro é " . $user->email . ", *está banida até " . date("d/m/Y", strftime($user->ban_end_at)) . "*.\nCaso não saiba o porquê dessa decisão, entre em contato com conosco por meio deste número mesmo, basta solicitar um atendimento. Estamos sempre à disposição para lhe ajudar no que você precisar!\n\nFique na paz de Cristo."
                 ];
                 $botLothus = new SendMessege();
-                $botLothus->api_sendZap($dataSendBot);
+                // $botLothus->api_sendZap($dataSendBot);
                 return $this->sendBanResponse($user);
             } elseif (!empty($endBan) and $endBan < $time) {
                 $user->update([

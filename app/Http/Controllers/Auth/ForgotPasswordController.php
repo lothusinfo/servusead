@@ -57,7 +57,7 @@ class ForgotPasswordController extends Controller
             'message' => "_*SERVUS EAD*_\n\nA paz do Senhor Jesus Cristo!\n_Solicitação de Redefinição de Senha_\n\nLink de confirmação: 👇\nead.servus.org.br/reset-password/" .$token. "?email=". $user->email ."\n\n‼️ Caso não tenha sido você quem solicitou, *sua conta pode estar em perigo*. Faça login e altere sua senha. Se não conseguir, entre em contato com conosco por meio deste número mesmo, basta solicitar um atendimento. Estamos sempre à disposição para lhe ajudar no que você precisar!\n\nFique na paz de Cristo."
         ];
         $botLothus = new SendMessege();
-        $botLothus->api_sendZap($dataSendBot);
+        // $botLothus->api_sendZap($dataSendBot);
 
         Mail::send('web.default.auth.password_verify', $emailData, function ($message) use ($request) {
             $message->from(!empty($generalSettings['site_email']) ? $generalSettings['site_email'] : env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
