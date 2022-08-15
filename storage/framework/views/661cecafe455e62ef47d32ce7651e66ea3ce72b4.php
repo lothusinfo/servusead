@@ -7,36 +7,21 @@
 <div class="row">
     <div class="col-12 col-md-6 mt-15">
 
-        <?php if($webinar->isWebinar()): ?>
+        
             <div class="form-group mt-15">
-                <label class="input-label"><?php echo e(trans('public.capacity')); ?> <span style='color:red;'>*</span></label>
-                <input type="number" name="capacity" value="<?php echo e((!empty($webinar) and !empty($webinar->capacity)) ? $webinar->capacity : old('capacity')); ?>" class="form-control <?php $__errorArgs = ['capacity'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>  is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" placeholder="<?php echo e(trans('forms.capacity_placeholder')); ?>"/>
-                <?php $__errorArgs = ['capacity'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                <div class="invalid-feedback">
-                    <?php echo e($message); ?>
-
-                </div>
-                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                <label class="input-label"><?php echo e(trans('public.capacity')); ?> </label>
+                <input type="number" name="capacity" value="<?php echo e((!empty($webinar) and !empty($webinar->capacity)) ? $webinar->capacity : old('capacity')); ?>" class="form-control" placeholder="<?php echo e(trans('forms.capacity_placeholder')); ?>"/>
+                
+                
+                    
+                
+                
             </div>
-        <?php endif; ?>
+        
 
         <div class="row mt-15">
 
-            <?php if($webinar->isWebinar()): ?>
+            
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label class="input-label"><?php echo e(trans('public.start_date')); ?></label>
@@ -70,7 +55,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-            <?php endif; ?>
+            
 
             <div class="col-12 <?php if($webinar->isWebinar()): ?> col-md-6 <?php endif; ?>">
                 <div class="form-group">
@@ -109,7 +94,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
         </div>
 
-        <?php if($webinar->isWebinar() and getFeaturesSettings('timezone_in_create_webinar')): ?>
+        
             <?php
                 $selectedTimezone = getGeneralSettings('default_time_zone');
 
@@ -141,7 +126,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
             </div>
-        <?php endif; ?>
+        
 
         <div class="form-group mt-30 d-flex align-items-center justify-content-between mb-5">
             <label class="cursor-pointer input-label" for="forumSwitch"><?php echo e(trans('update.course_forum')); ?></label>

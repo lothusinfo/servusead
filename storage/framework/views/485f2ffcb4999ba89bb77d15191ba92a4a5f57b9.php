@@ -1,0 +1,1 @@
+<iframe src="<?php echo e($url); ?>" width="100%" height="100%" allow="camera *;microphone *;display-capture *;" allowfullscreen></iframe><?php /**PATH C:\xampp\htdocs\servusead\resources\views/web/default/course/bigbluebutton/stream.blade.php ENDPATH**/ ?>

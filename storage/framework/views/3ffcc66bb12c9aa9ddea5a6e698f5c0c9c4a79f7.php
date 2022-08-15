@@ -58,6 +58,13 @@
                         <span><?php echo e(trans('panel.classes')); ?></span>
                     </a>
                     <ul class="dropdown-menu">
+
+                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_webinars_create')): ?>
+                            <li class="<?php echo e((request()->is('admin/webinars/create')) ? 'active' : ''); ?>">
+                                <a class="nav-link" href="/admin/webinars/create"><?php echo e(trans('admin/main.new')); ?></a>
+                            </li>
+                        <?php endif; ?>
+                        
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_webinars_list')): ?>
                             <li class="<?php echo e((request()->is('admin/webinars') and request()->get('type') == 'course') ? 'active' : ''); ?>">
                                 <a class="nav-link <?php if(!empty($sidebarBeeps['courses']) and $sidebarBeeps['courses']): ?> beep beep-sidebar <?php endif; ?>" href="/admin/webinars?type=course"><?php echo e(trans('admin/main.courses')); ?></a>
@@ -69,12 +76,6 @@
 
                             <li class="<?php echo e((request()->is('admin/webinars') and request()->get('type') == 'text_lesson') ? 'active' : ''); ?>">
                                 <a class="nav-link <?php if(!empty($sidebarBeeps['textLessons']) and $sidebarBeeps['textLessons']): ?> beep beep-sidebar <?php endif; ?>" href="/admin/webinars?type=text_lesson"><?php echo e(trans('admin/main.text_courses')); ?></a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_webinars_create')): ?>
-                            <li class="<?php echo e((request()->is('admin/webinars/create')) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="/admin/webinars/create"><?php echo e(trans('admin/main.new')); ?></a>
                             </li>
                         <?php endif; ?>
 

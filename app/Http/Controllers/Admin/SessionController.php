@@ -25,7 +25,7 @@ class SessionController extends Controller
             'title' => 'required|max:64',
             'date' => 'required|date',
             'duration' => 'required|numeric',
-            'link' => ($data['session_api'] == 'local') ? 'required|url' : 'nullable',
+            'link' => 'nullable'/*($data['session_api'] == 'local') ? 'required|url' :*/,
             'api_secret' => /*(($data['session_api'] != 'zoom') and ($data['session_api'] != 'agora')) ? 'required' : */'nullable',
             'moderator_secret' => /*($data['session_api'] == 'big_blue_button') ? 'required' : */'nullable',
         ]);
@@ -83,12 +83,12 @@ class SessionController extends Controller
                     'date' => $sessionDate->getTimestamp(),
                     'duration' => $data['duration'],
                     'extra_time_to_join' => $data['extra_time_to_join'] ?? null,
-                    'link' => $data['link'] ?? '',
-                    'session_api' => $data['session_api'],
+                    'link' => $data['link'] ?? null,
+                    'session_api' => /*$data['session_api']*/ 'big_blue_button',
                     // 'api_secret' => $data['api_secret'] ?? '',
                     'api_secret' =>  rand(0, 99999999),
                     // 'moderator_secret' => $data['moderator_secret'] ?? '',
-                    'moderator_secret' =>rand(0, 99999999),
+                    'moderator_secret' => rand(0, 99999999),
                     'check_previous_parts' => $data['check_previous_parts'],
                     'access_after_day' => $data['access_after_day'],
                     'status' => (!empty($data['status']) and $data['status'] == 'on') ? Session::$Active : Session::$Inactive,
@@ -110,7 +110,7 @@ class SessionController extends Controller
                 }
 
                 if ($data['session_api'] == 'big_blue_button') {
-                    $this->handleBigBlueButtonApi($session, $teacher);
+                    // $this->handleBigBlueButtonApi($session, $teacher);
                 } elseif ($data['session_api'] == 'zoom') {
                     return $this->handleZoomApi($session, $teacher);
                 } else if ($data['session_api'] == 'agora') {

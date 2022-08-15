@@ -537,7 +537,7 @@ class WebinarController extends Controller
 
             if ($webinar->isWebinar()) {
                 $rules['start_date'] = 'required|date';
-                $rules['capacity'] = 'required|integer';
+                $rules['capacity'] = /*'required|integer'*/ 'nullable';
             }
         }
 

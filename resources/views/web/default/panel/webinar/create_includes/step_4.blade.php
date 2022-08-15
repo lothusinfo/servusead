@@ -15,11 +15,11 @@
     @include('web.default.panel.webinar.create_includes.accordions.chapter')
 </section>
 
-@if($webinar->isWebinar())
+{{-- @if($webinar->isWebinar()) --}}
     <div id="newSessionForm" class="d-none">
         @include('web.default.panel.webinar.create_includes.accordions.session',['webinar' => $webinar])
     </div>
-@endif
+{{-- @endif --}}
 
 <div id="newFileForm" class="d-none">
     @include('web.default.panel.webinar.create_includes.accordions.file',['webinar' => $webinar])

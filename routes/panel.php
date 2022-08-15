@@ -120,7 +120,7 @@ Route::group(['namespace' => 'Panel', 'prefix' => 'panel', 'middleware' => ['che
         Route::post('/store', 'SessionController@store');
         Route::post('/{id}/update', 'SessionController@update');
         Route::get('/{id}/delete', 'SessionController@destroy');
-        Route::get('/{id}/joinToBigBlueButton', 'SessionController@joinToBigBlueButton');
+        Route::get('/{id}/joinLothusTalk', 'SessionController@joinLothusTalk');
         Route::get('/{id}/joinToAgora', 'SessionController@joinToAgora');
         Route::get('/{id}/endAgora', 'SessionController@endAgora');
     });

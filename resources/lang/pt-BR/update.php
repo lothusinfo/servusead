@@ -269,7 +269,7 @@ return [
     'registration_packages' => 'Pacotes SaaS',
     'instructors_count' => 'Contagem de instrutores',
     'students_count' => 'Contagem de alunos',
-    'courses_capacity' => 'Cpacidade da aula ao vivo',
+    'courses_capacity' => 'Capacidade da aula ao vivo',
     'courses_count' => 'Contagem de cursos',
     'meeting_count' => 'Horários de reunião',
     'active_by_instructors' => 'Pacotes de instrutores ativos',

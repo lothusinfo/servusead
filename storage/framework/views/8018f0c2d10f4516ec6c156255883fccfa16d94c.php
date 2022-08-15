@@ -15,11 +15,11 @@
     <?php echo $__env->make('web.default.panel.webinar.create_includes.accordions.chapter', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </section>
 
-<?php if($webinar->isWebinar()): ?>
+
     <div id="newSessionForm" class="d-none">
         <?php echo $__env->make('web.default.panel.webinar.create_includes.accordions.session',['webinar' => $webinar], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
-<?php endif; ?>
+
 
 <div id="newFileForm" class="d-none">
     <?php echo $__env->make('web.default.panel.webinar.create_includes.accordions.file',['webinar' => $webinar], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

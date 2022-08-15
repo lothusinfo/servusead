@@ -6,33 +6,33 @@
 @endpush
 
 @section('content')
-    <section class="site-top-banner search-top-banner opacity-04 position-relative">
+    {{-- <section class="site-top-banner search-top-banner opacity-04 position-relative">
         <img src="{{ getPageBackgroundSettings('categories') }}" class="img-cover" alt=""/>
 
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center text-center">
                 <div class="col-12 col-md-9 col-lg-7">
-                    <div class="top-search-categories-form">
-                        <h1 class="text-white font-30 mb-15">{{ $pageTitle }}</h1>
-                        <span class="course-count-badge py-5 px-10 text-white rounded">{{ $coursesCount }} {{ trans('product.courses') }}</span>
+                    <div class="top-search-categories-form"> --}}
+                        {{-- <h1 class="text-white font-30 mb-15">{{ $pageTitle }}</h1> --}}
+                        {{-- <span class="course-count-badge py-5 px-10 text-white rounded">{{ $coursesCount }} {{ trans('product.courses') }}</span> --}}
 
-                        <div class="search-input bg-white p-10 flex-grow-1">
+                        {{-- <div class="search-input bg-white p-10 flex-grow-1">
                             <form action="/search" method="get">
                                 <div class="form-group d-flex align-items-center m-0">
                                     <input type="text" name="search" class="form-control border-0" placeholder="{{ trans('home.slider_search_placeholder') }}"/>
-                                    <button type="submit" class="btn btn-primary rounded-pill">{{ trans('home.find') }}</button>
-                                </div>
+                                    <button type="submit" class="btn btn-primary rounded-pill">{{ trans('home.find') }}</button> --}}
+                                {{-- </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <div class="container mt-30">
+    <div class="container mt-10">
 
-        <section class="mt-lg-50 pt-lg-20 mt-md-40 pt-md-40">
+        <section class="mt-lg-10 pt-lg-20 mt-md-40 pt-md-40">
             <form action="/classes" method="get" id="filtersForm">
 
                 @include('web.default.pages.includes.top_filters')

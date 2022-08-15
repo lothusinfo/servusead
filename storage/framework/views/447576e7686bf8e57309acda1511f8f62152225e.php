@@ -48,30 +48,19 @@
                     <div class="col-12 col-lg-6">
 
                         <div class="form-group">
-                            <label class="input-label"><?php echo e(trans('webinars.select_session_api')); ?></label>
+                            
 
                             <div class="js-session-api">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][session_api]" id="localApi<?php echo e(!empty($session) ? $session->id : ''); ?>" value="local" <?php if(empty($session) or $session->session_api == 'local'): ?> checked <?php endif; ?> class="js-api-input custom-control-input" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>>
-                                    <label class="custom-control-label" for="localApi<?php echo e(!empty($session) ? $session->id : ''); ?>"><?php echo e(trans('webinars.session_local_api')); ?></label>
-                                </div>
+                                
 
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][session_api]" id="bigBlueButton<?php echo e(!empty($session) ? $session->id : ''); ?>" value="big_blue_button" <?php if(!empty($session) and $session->session_api == 'big_blue_button'): ?> checked <?php endif; ?> class="js-api-input custom-control-input" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>>
-                                    <label class="custom-control-label" for="bigBlueButton<?php echo e(!empty($session) ? $session->id : ''); ?>"><?php echo e(trans('webinars.session_big_blue_button')); ?></label>
+                                    <input type="radio" checked name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][session_api]" id="bigBlueButton<?php echo e(!empty($session) ? $session->id : ''); ?>" value="big_blue_button" <?php if(!empty($session) and $session->session_api == 'big_blue_button'): ?> checked <?php endif; ?> class="js-api-input custom-control-input" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>>
+                                    <label class="custom-control-label" for="bigBlueButton<?php echo e(!empty($session) ? $session->id : ''); ?>"><?php echo e(trans('webinars.webinar')); ?></label>
                                 </div>
 
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][session_api]" id="zoomApi<?php echo e(!empty($session) ? $session->id : ''); ?>" value="zoom" <?php if(!empty($session) and $session->session_api == 'zoom'): ?> checked <?php endif; ?> class="js-api-input custom-control-input" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>>
-                                    <label class="custom-control-label" for="zoomApi<?php echo e(!empty($session) ? $session->id : ''); ?>"><?php echo e(trans('webinars.session_zoom')); ?></label>
-                                </div>
+                                
 
-                                <?php if(getFeaturesSettings('agora_live_streaming') and (!empty($webinar->price) or getFeaturesSettings('agora_in_free_courses'))): ?>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][session_api]" id="agoraApi<?php echo e(!empty($session) ? $session->id : ''); ?>" value="agora" <?php if(!empty($session) and $session->session_api == 'agora'): ?> checked <?php endif; ?> class="js-api-input custom-control-input" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>>
-                                        <label class="custom-control-label" for="agoraApi<?php echo e(!empty($session) ? $session->id : ''); ?>"><?php echo e(trans('update.agora')); ?></label>
-                                    </div>
-                                <?php endif; ?>
+                                
                             </div>
 
                             <div class="invalid-feedback"></div>
@@ -101,17 +90,9 @@
                             <input type="hidden" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][locale]" value="<?php echo e($defaultLocale); ?>">
                         <?php endif; ?>
 
-                        <div class="form-group js-api-secret <?php echo e((!empty($session) and ($session->session_api == 'zoom' or $session->session_api == 'agora')) ? 'd-none' :''); ?>">
-                            <label class="input-label"><?php echo e(trans('auth.password')); ?></label>
-                            <input type="text" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][api_secret]" class="js-ajax-api_secret form-control" value="<?php echo e(!empty($session) ? $session->api_secret : ''); ?>" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>/>
-                            <div class="invalid-feedback"></div>
-                        </div>
+                        
 
-                        <div class="form-group js-moderator-secret <?php echo e((empty($session) or $session->session_api != 'big_blue_button') ? 'd-none' :''); ?>">
-                            <label class="input-label"><?php echo e(trans('public.moderator_password')); ?></label>
-                            <input type="text" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][moderator_secret]" class="js-ajax-moderator_secret form-control" value="<?php echo e(!empty($session) ? $session->moderator_secret : ''); ?>" <?php echo e((!empty($session) and $session->session_api == 'big_blue_button') ? 'disabled' :''); ?>/>
-                            <div class="invalid-feedback"></div>
-                        </div>
+                        
 
                         <div class="form-group">
                             <label class="input-label"><?php echo e(trans('public.title')); ?></label>
@@ -138,11 +119,7 @@
                             <div class="invalid-feedback"></div>
                         </div>
 
-                        <div class="form-group js-local-link <?php echo e((!empty($session) and $session->session_api == 'agora') ? 'd-none' : ''); ?>">
-                            <label class="input-label"><?php echo e(trans('public.link')); ?></label>
-                            <input type="text" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][link]" class="js-ajax-link form-control" value="<?php echo e(!empty($session) ? $session->getJoinLink() : ''); ?>" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>/>
-                            <div class="invalid-feedback"></div>
-                        </div>
+                        
 
                         <div class="form-group">
                             <label class="input-label"><?php echo e(trans('public.description')); ?></label>
@@ -183,7 +160,15 @@
                                 </div>
                             <?php endif; ?>
 
-                            
+                            <div class="form-group mt-20">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <label class="cursor-pointer input-label" for="sessionAgoraRecordSwitch<?php echo e(!empty($session) ? $session->id : '_record'); ?>"><?php echo e(trans('update.record')); ?></label>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][agora_record]" class="custom-control-input" id="sessionAgoraRecordSwitch<?php echo e(!empty($session) ? $session->id : '_record'); ?>" <?php echo e((!empty($session) and !empty($session->agora_settings) and $session->agora_settings->record) ? 'checked' : ''); ?>>
+                                        <label class="custom-control-label" for="sessionAgoraRecordSwitch<?php echo e(!empty($session) ? $session->id : '_record'); ?>"></label>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 

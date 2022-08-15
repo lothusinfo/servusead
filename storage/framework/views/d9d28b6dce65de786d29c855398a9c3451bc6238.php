@@ -35,6 +35,7 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <?php endif; ?>
 
+        
         <?php if(!empty($course->chapters) and count($course->chapters)): ?>
             <?php echo $__env->make('web.default.course.learningPage.components.content_tab.chapter', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php endif; ?>

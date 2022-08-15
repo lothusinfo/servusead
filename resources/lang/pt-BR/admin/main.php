@@ -1260,5 +1260,9 @@ return [
     'product_sale_count' => 'Contagem de vendas de produtos',
     '.condition_product_sale_count' => 'Contagem de vendas de produtos de condição',
     'condition_make_topic' => 'Condição para criar tópico',
+    'theme_colors' => 'Cores do tema',
+    'theme_fonts' => 'Fontes do tema',
+    'navbar_button' => 'Botões do Menu',
+    'others_personalization' => 'Outras personalizações'
     
 ];

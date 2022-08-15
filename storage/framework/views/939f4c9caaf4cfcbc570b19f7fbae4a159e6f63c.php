@@ -133,9 +133,9 @@
 
                                                 <a href="/panel/webinars/<?php echo e($webinar->id); ?>/edit" class="webinar-actions d-block mt-10"><?php echo e(trans('public.edit')); ?></a>
 
-                                                <?php if($webinar->isWebinar()): ?>
+                                                
                                                     <a href="/panel/webinars/<?php echo e($webinar->id); ?>/step/4" class="webinar-actions d-block mt-10"><?php echo e(trans('public.sessions')); ?></a>
-                                                <?php endif; ?>
+                                                
 
                                                 <a href="/panel/webinars/<?php echo e($webinar->id); ?>/step/4" class="webinar-actions d-block mt-10"><?php echo e(trans('public.files')); ?></a>
 

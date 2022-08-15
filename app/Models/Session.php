@@ -83,7 +83,7 @@ class Session extends Model implements TranslatableContract
         $link = $this->link;
 
         if ($this->session_api == 'big_blue_button') {
-            $link = url('panel/sessions/' . $this->id . '/joinToBigBlueButton');
+            $link = url('panel/sessions/' . $this->id . '/joinLothusTalk');
         }
 
         if ($zoom_start_link and auth()->check() and auth()->id() == $this->creator_id and $this->session_api == 'zoom') {

@@ -86,9 +86,9 @@ $message = $__bag->first($__errorArgs[0]); ?>  is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
-                                                    <option value="webinar" <?php if((!empty($webinar) and $webinar->isWebinar()) or old('type') == \App\Models\Webinar::$webinar): ?> selected <?php endif; ?>><?php echo e(trans('webinars.webinar')); ?></option>
+                                                    
                                                     <option value="course" <?php if((!empty($webinar) and $webinar->isCourse()) or old('type') == \App\Models\Webinar::$course): ?> selected <?php endif; ?>><?php echo e(trans('product.video_course')); ?></option>
-                                                    <option value="text_lesson" <?php if((!empty($webinar) and $webinar->isTextCourse()) or old('type') == \App\Models\Webinar::$textLesson): ?> selected <?php endif; ?>><?php echo e(trans('product.text_course')); ?></option>
+                                                    
                                                 </select>
 
                                                 <?php $__errorArgs = ['type'];
@@ -412,36 +412,17 @@ unset($__errorArgs, $__bag); ?>
                                     <div class="row">
                                         <div class="col-12 col-md-6">
 
-                                            <?php if(empty($webinar) or (!empty($webinar) and $webinar->isWebinar())): ?>
+                                            
 
                                                 <div class="form-group mt-15 js-capacity <?php echo e((!empty(old('type')) and old('type') != \App\Models\Webinar::$webinar) ? 'd-none' : ''); ?>">
                                                     <label class="input-label"><?php echo e(trans('public.capacity')); ?></label>
-                                                    <input type="number" name="capacity" value="<?php echo e(!empty($webinar) ? $webinar->capacity : old('capacity')); ?>" class="form-control <?php $__errorArgs = ['capacity'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>  is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"/>
-                                                    <?php $__errorArgs = ['capacity'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                    <div class="invalid-feedback">
-                                                        <?php echo e($message); ?>
-
-                                                    </div>
-                                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                                                    <input type="number" name="capacity" value="<?php echo e(!empty($webinar) ? $webinar->capacity : old('capacity')); ?>" class="form-control"/>
+                                                    
                                                 </div>
-                                            <?php endif; ?>
+                                            
 
                                             <div class="row mt-15">
-                                                <?php if(empty($webinar) or (!empty($webinar) and $webinar->isWebinar())): ?>
+                                                
                                                     <div class="col-12 col-md-6 js-start_date <?php echo e((!empty(old('type')) and old('type') != \App\Models\Webinar::$webinar) ? 'd-none' : ''); ?>">
                                                         <div class="form-group">
                                                             <label class="input-label"><?php echo e(trans('public.start_date')); ?></label>
@@ -475,7 +456,7 @@ unset($__errorArgs, $__bag); ?>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                <?php endif; ?>
+                                                
 
                                                 <div class="col-12 col-md-6">
                                                     <div class="form-group">

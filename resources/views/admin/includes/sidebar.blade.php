@@ -56,6 +56,13 @@
                         <span>{{ trans('panel.classes') }}</span>
                     </a>
                     <ul class="dropdown-menu">
+
+                        @can('admin_webinars_create')
+                            <li class="{{ (request()->is('admin/webinars/create')) ? 'active' : '' }}">
+                                <a class="nav-link" href="/admin/webinars/create">{{ trans('admin/main.new') }}</a>
+                            </li>
+                        @endcan()
+                        
                         @can('admin_webinars_list')
                             <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'course') ? 'active' : '' }}">
                                 <a class="nav-link @if(!empty($sidebarBeeps['courses']) and $sidebarBeeps['courses']) beep beep-sidebar @endif" href="/admin/webinars?type=course">{{ trans('admin/main.courses') }}</a>
@@ -67,12 +74,6 @@
 
                             <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'text_lesson') ? 'active' : '' }}">
                                 <a class="nav-link @if(!empty($sidebarBeeps['textLessons']) and $sidebarBeeps['textLessons']) beep beep-sidebar @endif" href="/admin/webinars?type=text_lesson">{{ trans('admin/main.text_courses') }}</a>
-                            </li>
-                        @endcan()
-
-                        @can('admin_webinars_create')
-                            <li class="{{ (request()->is('admin/webinars/create')) ? 'active' : '' }}">
-                                <a class="nav-link" href="/admin/webinars/create">{{ trans('admin/main.new') }}</a>
                             </li>
                         @endcan()
 

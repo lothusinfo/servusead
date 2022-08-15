@@ -27,9 +27,10 @@ class SessionController extends Controller
             'title' => 'required|max:64',
             'date' => 'required|date',
             'duration' => 'required|numeric',
-            'link' => ($data['session_api'] == 'local') ? 'required|url' : 'nullable',
-            'api_secret' => /*(($data['session_api'] != 'zoom') and ($data['session_api'] != 'agora')) ? 'required' :*/ 'nullable',
-            'moderator_secret' => /*($data['session_api'] == 'big_blue_button') ? 'required' : */'nullable',
+            'link' => 'nullable'/*($data['session_api'] == 'local') ? 'required|url' :*/,
+            // 'api_secret' => /*(($data['session_api'] != 'zoom') and ($data['session_api'] != 'agora')) ? 'required' :*/ 'nullable',
+            'api_secret' => 'nullable',
+            'moderator_secret' => /*($data['session_api'] == 'big_blue_button') ? 'required' : */ 'nullable',
         ]);
 
         if ($validator->fails()) {
@@ -81,11 +82,12 @@ class SessionController extends Controller
                 'date' => $sessionDate->getTimestamp(),
                 'duration' => $data['duration'],
                 'link' => $data['link'] ?? null,
-                'session_api' => $data['session_api'],
+                // 'session_api' => $data['session_api'],
+                'session_api' => /*$data['session_api']*/ 'big_blue_button',
                 // 'api_secret' => $data['api_secret'] ?? '',
                 'api_secret' =>  rand(0, 99999999),
                 // 'moderator_secret' => $data['moderator_secret'] ?? '',
-                'moderator_secret' =>rand(0, 99999999),
+                'moderator_secret' => rand(0, 99999999),
                 'check_previous_parts' => $data['check_previous_parts'],
                 'access_after_day' => $data['access_after_day'],
                 'extra_time_to_join' => $data['extra_time_to_join'] ?? null,
@@ -106,7 +108,7 @@ class SessionController extends Controller
             }
 
             if ($data['session_api'] == 'big_blue_button') {
-                $this->handleBigBlueButtonApi($session, $user);
+                // $this->handleBigBlueButtonApi($session, $user);
             } else if ($data['session_api'] == 'zoom') {
                 return $this->handleZoomApi($session, $user);
             } else if ($data['session_api'] == 'agora') {
@@ -229,7 +231,7 @@ class SessionController extends Controller
     public function destroy(Request $request, $id)
     {
         $session = Session::where('id', $id)
-            ->where('creator_id', auth()->id())
+            // ->where('creator_id', auth()->id())
             ->first();
 
         if (!empty($session)) {
@@ -296,35 +298,47 @@ class SessionController extends Controller
             'allowStartStopRecording' => true,
             'record' => true
         ]);
-        
+
         $createMeeting->setDuration($session->duration);
         \Bigbluebutton::create($createMeeting);
-        
+
         return response()->json($createMeeting);
         return true;
     }
 
-    public function joinToBigBlueButton($id)
+    public function joinLothusTalk($id)
     {
-        // dd(\Bigbluebutton::isConnect()); //by default 
-        // dd(\Bigbluebutton::server('server1')->isConnect()); //for specific server
+
+        $user = auth()->user();
         $session = Session::where('id', $id)
             ->where('session_api', 'big_blue_button')
             ->where('status', Session::$Active)
             ->first();
 
+        $canAccess = false;
+
         if (!empty($session)) {
-            $user = auth()->user();
+            $this->handleBigBlueButtonApi($session, $user);
 
             if ($user->id == $session->creator_id) {
                 $url = \Bigbluebutton::join([
                     'meetingID' => $session->id,
                     'userName' => $user->full_name,
-                    'password' => $session->moderator_secret
+                    'password' => $session->moderator_secret,
+                    'avatarUrl' => request()->url() . $user->avatar
                 ]);
 
+                // dd(request()->url() . $user->avatar);
+
                 if ($url) {
-                    return redirect($url);
+                    $canAccess = true;
+                } else {
+                    $toastData = [
+                        'title' => trans('public.request_failed'),
+                        'msg' => trans('update.this_live_has_been_ended'),
+                        'status' => 'error'
+                    ];
+                    return redirect('/panel')->with(['toast' => $toastData]);
                 }
             } else {
                 $checkSale = Sale::where('buyer_id', $user->id)
@@ -338,13 +352,32 @@ class SessionController extends Controller
                     $url = \Bigbluebutton::join([
                         'meetingID' => $session->id,
                         'userName' => $user->full_name,
-                        'password' => $session->api_secret
+                        'password' => $session->api_secret,
+                        'avatarUrl' => request()->url() . $user->avatar
                     ]);
 
                     if ($url) {
-                        return redirect($url);
+                        // return redirect($url);
+                        $canAccess = true;
+                    } else {
+                        $toastData = [
+                            'title' => trans('public.request_failed'),
+                            'msg' => trans('update.this_live_has_been_ended'),
+                            'status' => 'error'
+                        ];
+                        return redirect('/panel')->with(['toast' => $toastData]);
                     }
                 }
+            }
+
+            if ($canAccess) {
+                $data = [
+                    'session' => $session,
+                    'url' => $url,
+                    'pageTitle' => $session->title,
+                ];
+
+                return view('web.default.course.bigbluebutton.index', $data);
             }
         }
 

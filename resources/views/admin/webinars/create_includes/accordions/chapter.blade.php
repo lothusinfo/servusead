@@ -31,11 +31,11 @@
                                             <i data-feather="plus" class=""></i>
                                         </button>
                                         <div class="dropdown-menu ">
-                                            @if($webinar->isWebinar())
+                                            {{-- @if($webinar->isWebinar()) --}}
                                                 <button type="button" class="js-add-course-content-btn d-block mb-10 btn-transparent" data-webinar-id="{{ $webinar->id }}" data-type="session" data-chapter="{{ !empty($chapter) ? $chapter->id :'' }}">
                                                     {{ trans('public.add_session') }}
                                                 </button>
-                                            @endif
+                                            {{-- @endif --}}
 
                                             <button type="button" class="js-add-course-content-btn d-block mb-10 btn-transparent" data-webinar-id="{{ $webinar->id }}" data-type="file" data-chapter="{{ !empty($chapter) ? $chapter->id :'' }}">
                                                 {{ trans('public.add_file') }}

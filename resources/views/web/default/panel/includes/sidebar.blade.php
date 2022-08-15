@@ -19,9 +19,9 @@
     </button>
 </div>
 
-<div class="panel-sidebar pt-50 pb-25 px-25" id="panelSidebar">
+<div class="panel-sidebar pt-20 pb-25 px-25" id="panelSidebar">
     <button class="btn-transparent panel-sidebar-close sidebarNavToggle">
-        <i data-feather="x" width="24" height="24"></i>
+        <i data-feather="x" width="20" height="20"></i>
     </button>
 
     <div class="user-info d-flex align-items-center flex-row flex-lg-column justify-content-lg-center">

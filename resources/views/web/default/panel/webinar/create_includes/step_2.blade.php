@@ -7,21 +7,21 @@
 <div class="row">
     <div class="col-12 col-md-6 mt-15">
 
-        @if($webinar->isWebinar())
+        {{-- @if($webinar->isWebinar()) --}}
             <div class="form-group mt-15">
-                <label class="input-label">{{ trans('public.capacity') }} <span style='color:red;'>*</span></label>
-                <input type="number" name="capacity" value="{{ (!empty($webinar) and !empty($webinar->capacity)) ? $webinar->capacity : old('capacity') }}" class="form-control @error('capacity')  is-invalid @enderror" placeholder="{{ trans('forms.capacity_placeholder') }}"/>
-                @error('capacity')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
+                <label class="input-label">{{ trans('public.capacity') }} {{-- <span style='color:red;'>*</span> --}}</label>
+                <input type="number" name="capacity" value="{{ (!empty($webinar) and !empty($webinar->capacity)) ? $webinar->capacity : old('capacity') }}" class="form-control" placeholder="{{ trans('forms.capacity_placeholder') }}"/>
+                {{-- @error('capacity') --}}
+                {{-- <div class="invalid-feedback"> --}}
+                    {{-- {{ $message }} --}}
+                {{-- </div> --}}
+                {{-- @enderror --}}
             </div>
-        @endif
+        {{-- @endif --}}
 
         <div class="row mt-15">
 
-            @if($webinar->isWebinar())
+            {{-- @if($webinar->isWebinar()) --}}
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label class="input-label">{{ trans('public.start_date') }}</label>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-            @endif
+            {{-- @endif --}}
 
             <div class="col-12 @if($webinar->isWebinar()) col-md-6 @endif">
                 <div class="form-group">
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        @if($webinar->isWebinar() and getFeaturesSettings('timezone_in_create_webinar'))
+        {{-- @if($webinar->isWebinar() and getFeaturesSettings('timezone_in_create_webinar')) --}}
             @php
                 $selectedTimezone = getGeneralSettings('default_time_zone');
 
@@ -88,7 +88,7 @@
                 </div>
                 @enderror
             </div>
-        @endif
+        {{-- @endif --}}
 
         <div class="form-group mt-30 d-flex align-items-center justify-content-between mb-5">
             <label class="cursor-pointer input-label" for="forumSwitch">{{ trans('update.course_forum') }}</label>
