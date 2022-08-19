@@ -108,18 +108,18 @@ return [
 
     'session_date_must_larger_webinar_start_date' => 'A data selecionada deve ser posterior à data de início do webinar (:start_date)',
 
-    'next_session_duration' => 'Duração da próxima sessão',
-    'next_session_start_date' => 'Data de início da próxima sessão',
+    'next_session_duration' => 'Duração da próxima aula ao vivo',
+    'next_session_start_date' => 'Data de início da próxima aula ao vivo',
 
     'all_courses' => 'Todos os cursos',
     'all_students' => 'Todos os alunos',
     'all_instructors' => 'Todos os instrutores',
 
-    'next_session_info' => 'Informações da próxima sessão',
-    'session_title' => 'Título da sessão',
+    'next_session_info' => 'Informações da próxima aula ao vivo',
+    'session_title' => 'Título da aula ao vivo',
     'join_information' => 'Informações de associação',
     'system' => 'Sistema',
-    'undefined_active_session' => 'Sessão ativa indefinida',
+    'undefined_active_session' => 'Aula ao vivo ativa indefinida',
 
     'empty_means_webinar_capacity' => 'Deixe em branco para usar a capacidade da classe',
 

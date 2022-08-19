@@ -315,12 +315,13 @@ class SessionController extends Controller
             ->where('status', Session::$Active)
             ->first();
 
+        $webinar = Webinar::where('id', $session->webinar_id)->first();
         $canAccess = false;
 
         if (!empty($session)) {
             $this->handleBigBlueButtonApi($session, $user);
 
-            if ($user->id == $session->creator_id) {
+            if ($user->id == $session->creator_id || $user->id == $webinar->teacher_id) {
                 $url = \Bigbluebutton::join([
                     'meetingID' => $session->id,
                     'userName' => $user->full_name,
@@ -328,7 +329,6 @@ class SessionController extends Controller
                     'avatarUrl' => request()->url() . $user->avatar
                 ]);
 
-                // dd(request()->url() . $user->avatar);
 
                 if ($url) {
                     $canAccess = true;

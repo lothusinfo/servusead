@@ -35,12 +35,12 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
-                <option value="webinar" <?php if(!empty($webinar) and $webinar->isWebinar()): ?> selected <?php endif; ?>>
-                    <?php echo e(trans('webinars.webinar')); ?></option>
+                
+                    
                 <option value="course" <?php if(!empty($webinar) and $webinar->type == 'course'): ?> selected <?php endif; ?>>
                     <?php echo e(trans('webinars.video_course')); ?></option>
-                <option value="text_lesson" <?php if(!empty($webinar) and $webinar->type == 'text_lesson'): ?> selected <?php endif; ?>>
-                    <?php echo e(trans('webinars.text_lesson')); ?></option>
+                
+                    
             </select>
 
             <?php $__errorArgs = ['type'];

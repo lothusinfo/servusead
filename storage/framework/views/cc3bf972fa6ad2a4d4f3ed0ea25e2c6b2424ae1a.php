@@ -19,9 +19,7 @@ $sequenceContentHasError = (!empty($checkSequenceContent) and (!empty($checkSequ
 ?>
 
 <div class=" d-flex align-items-start p-10 cursor-pointer <?php echo e((!empty($checkSequenceContent) and $sequenceContentHasError) ? 'js-sequence-content-error-modal' : 'tab-item'); ?>"
-    data-type="<?php echo e($type); ?>" data-id="<?php echo e($item->id); ?>"
-    data-passed-error="<?php echo e(!empty($checkSequenceContent['all_passed_items_error']) ? $checkSequenceContent['all_passed_items_error'] : ''); ?>"
-    data-access-days-error="<?php echo e(!empty($checkSequenceContent['access_after_day_error']) ? $checkSequenceContent['access_after_day_error'] : ''); ?>">
+    data-type="<?php echo e($type); ?>" data-id="<?php echo e($item->id); ?>">
 
     <span class="chapter-icon bg-gray300 mr-10">
         <i data-feather="<?php echo e($icon); ?>" class="text-gray" width="16" height="16"></i>

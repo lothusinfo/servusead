@@ -68,20 +68,20 @@
                                 <a class="nav-link @if(!empty($sidebarBeeps['courses']) and $sidebarBeeps['courses']) beep beep-sidebar @endif" href="/admin/webinars?type=course">{{ trans('admin/main.courses') }}</a>
                             </li>
 
-                            <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'webinar') ? 'active' : '' }}">
+                            {{-- <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'webinar') ? 'active' : '' }}">
                                 <a class="nav-link @if(!empty($sidebarBeeps['webinars']) and $sidebarBeeps['webinars']) beep beep-sidebar @endif" href="/admin/webinars?type=webinar">{{ trans('admin/main.live_classes') }}</a>
-                            </li>
+                            </li> --}}
 
-                            <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'text_lesson') ? 'active' : '' }}">
+                            {{-- <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'text_lesson') ? 'active' : '' }}">
                                 <a class="nav-link @if(!empty($sidebarBeeps['textLessons']) and $sidebarBeeps['textLessons']) beep beep-sidebar @endif" href="/admin/webinars?type=text_lesson">{{ trans('admin/main.text_courses') }}</a>
-                            </li>
+                            </li> --}}
                         @endcan()
 
-                        @can('admin_agora_history_list')
+                        {{-- @can('admin_agora_history_list')
                             <li class="{{ (request()->is('admin/agora_history')) ? 'active' : '' }}">
                                 <a class="nav-link" href="/admin/agora_history">{{ trans('update.agora_history') }}</a>
                             </li>
-                        @endcan
+                        @endcan --}}
 
                     </ul>
                 </li>

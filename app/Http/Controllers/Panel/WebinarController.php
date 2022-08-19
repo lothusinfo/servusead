@@ -54,7 +54,6 @@ class WebinarController extends Controller
         return view(getTemplate() . '.panel.webinar.index', $data);
     }
 
-
     public function invitations(Request $request)
     {
         $user = auth()->user();
@@ -562,6 +561,10 @@ class WebinarController extends Controller
             if (!empty($data['video_demo_source']) and !in_array($data['video_demo_source'], ['upload', 'youtube', 'vimeo', 'external_link'])) {
                 $data['video_demo_source'] = 'upload';
             }
+
+            if (empty($data['teacher_id'])) {
+                $data['teacher_id'] = $user->id;
+            }
         }
 
         if ($currentStep == 2) {
@@ -577,7 +580,7 @@ class WebinarController extends Controller
                 }
             }
 
-            if ($webinar->isWebinar()) {
+            // if ($webinar->isWebinar()) {
                 if (empty($data['timezone']) or !getFeaturesSettings('timezone_in_create_webinar')) {
                     $data['timezone'] = getTimezone();
                 }
@@ -585,7 +588,7 @@ class WebinarController extends Controller
                 $startDate = convertTimeToUTCzone($data['start_date'], $data['timezone']);
 
                 $data['start_date'] = $startDate->getTimestamp();
-            }
+            // }
 
             $data['forum'] = !empty($data['forum']) ? true : false;
             $data['support'] = !empty($data['support']) ? true : false;
@@ -665,9 +668,6 @@ class WebinarController extends Controller
             $data['seo_description'],
         );
 
-        if (empty($data['teacher_id'])) {
-            $data['teacher_id'] = $user->id;
-        }
 
         $webinar->update($data);
 

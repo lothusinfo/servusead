@@ -19,9 +19,7 @@ $sequenceContentHasError = (!empty($checkSequenceContent) and (!empty($checkSequ
 @endphp
 
 <div class=" d-flex align-items-start p-10 cursor-pointer {{ (!empty($checkSequenceContent) and $sequenceContentHasError) ? 'js-sequence-content-error-modal' : 'tab-item' }}"
-    data-type="{{ $type }}" data-id="{{ $item->id }}"
-    data-passed-error="{{ !empty($checkSequenceContent['all_passed_items_error']) ? $checkSequenceContent['all_passed_items_error'] : '' }}"
-    data-access-days-error="{{ !empty($checkSequenceContent['access_after_day_error']) ? $checkSequenceContent['access_after_day_error'] : '' }}">
+    data-type="{{ $type }}" data-id="{{ $item->id }}">
 
     <span class="chapter-icon bg-gray300 mr-10">
         <i data-feather="{{ $icon }}" class="text-gray" width="16" height="16"></i>

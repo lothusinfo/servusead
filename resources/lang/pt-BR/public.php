@@ -122,9 +122,9 @@ return [
 
     'all' => 'Tudo',
     'sessions' => 'Sessões',
-    'add_session' => 'Nova sessão',
-    'add_new_sessions' => 'Nova sessão ao vivo',
-    'sessions_no_result' => 'Sem sessões ao vivo!',
+    'add_session' => 'Nova aula ao vivo',
+    'add_new_sessions' => 'Adicionar novas aulas ao vivo',
+    'sessions_no_result' => 'Sem aulas ao vivo!',
     'sessions_no_result_hint' => 'Você pode criar sessões ao vivo para que os alunos possam participar e começar a aprender.',
     'create_join_link' => 'Criar link de adesão',
 
@@ -361,8 +361,8 @@ return [
     'can_not_try_again_quiz_toast_msg_lang' => 'Você não pode fazer este teste novamente.',
     'can_not_download_certificate_toast_lang' => 'Falha no download',
     'can_not_download_certificate_toast_msg_lang' => 'Você não pode baixar este certificado.',
-    'session_finished_toast_title_lang' => 'Sessão Finalizada',
-    'session_finished_toast_msg_lang' => 'Você está muito atrasado, esta sessão terminou.',
+    'session_finished_toast_title_lang' => 'Aula ao vivo Finalizada',
+    'session_finished_toast_msg_lang' => 'Você está muito atrasado, esta aula terminou.',
 
     'zoom_api' => 'API de zoom',
     'zoom_jwt_token' => 'Zoom JWT token',
