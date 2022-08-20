@@ -321,12 +321,14 @@ class SessionController extends Controller
         if (!empty($session)) {
             $this->handleBigBlueButtonApi($session, $user);
 
+            $avatarImage = (!empty($user->avatar) && !is_null($user->avatar)) ? 'https://ead.servus.org.br/public' . $user->avatar : 'https://ead.servus.org.br/public/store/1/default_images/user_default_placeholder.png';
+
             if ($user->id == $session->creator_id || $user->id == $webinar->teacher_id) {
                 $url = \Bigbluebutton::join([
                     'meetingID' => $session->id,
                     'userName' => $user->full_name,
                     'password' => $session->moderator_secret,
-                    'avatarUrl' => request()->url() . $user->avatar
+                    'avatarUrl' => $avatarImage
                 ]);
 
 
@@ -353,7 +355,7 @@ class SessionController extends Controller
                         'meetingID' => $session->id,
                         'userName' => $user->full_name,
                         'password' => $session->api_secret,
-                        'avatarUrl' => request()->url() . $user->avatar
+                        'avatarUrl' => $avatarImage
                     ]);
 
                     if ($url) {
