@@ -287,8 +287,10 @@ class SessionController extends Controller
         ], 422);
     }
 
-    private function handleBigBlueButtonApi($session, $user)
+    private function handleBigBlueButtonApi($session)
     {
+        $xml = [['link' => 'https://ead.servus.org.br/public/store/1/default_images/Servus_EaD/1.png', 'fileName' => '1.png']];
+
         $createMeeting = \Bigbluebutton::initCreateMeeting([
             'meetingID' => $session->id,
             'meetingName' => $session->title,
@@ -296,7 +298,9 @@ class SessionController extends Controller
             'moderatorPW' => $session->moderator_secret,
             'logoutUrl' => 'https://ead.servus.org.br',
             'allowStartStopRecording' => true,
-            'record' => true
+            'record' => true,
+            // 'presentation' => $xml,
+            // 'welcomeMessage' => '<br>Welcome to <b>%%CONFNAME%%</b>!'
         ]);
 
         $createMeeting->setDuration($session->duration);
@@ -319,7 +323,7 @@ class SessionController extends Controller
         $canAccess = false;
 
         if (!empty($session)) {
-            $this->handleBigBlueButtonApi($session, $user);
+            $this->handleBigBlueButtonApi($session);
 
             $avatarImage = (!empty($user->avatar) && !is_null($user->avatar)) ? 'https://ead.servus.org.br/public' . $user->avatar : 'https://ead.servus.org.br/public/store/1/default_images/user_default_placeholder.png';
 

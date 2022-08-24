@@ -114,13 +114,13 @@
                         </div> --}}
 
                         <div class="form-group">
-                            <label class="input-label">{{ trans('public.title') }}</label>
+                            <label class="input-label">{{ trans('public.title') }} <span style='color:red;'>*</span></label>
                             <input type="text" name="ajax[{{ !empty($session) ? $session->id : 'new' }}][title]" class="js-ajax-title form-control" value="{{ !empty($session) ? $session->title : '' }}" placeholder="{{ trans('forms.maximum_255_characters') }}"/>
                             <div class="invalid-feedback"></div>
                         </div>
 
                         <div class="form-group">
-                            <label class="input-label">{{ trans('public.date') }}</label>
+                            <label class="input-label">{{ trans('public.date') }} <span style='color:red;'>*</span></label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="dateRangeLabel">
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="input-label">{{ trans('public.duration') }} <span class="braces">({{ trans('public.minutes') }})</span></label>
+                            <label class="input-label">{{ trans('public.duration') }} <span class="braces">({{ trans('public.minutes') }})</span> <span style='color:red;'>*</span></label>
                             <input type="text" name="ajax[{{ !empty($session) ? $session->id : 'new' }}][duration]" class="js-ajax-duration form-control" value="{{ !empty($session) ? $session->duration : '' }}" {{ (!empty($session) and $session->session_api != 'local') ? 'disabled' :'' }}/>
                             <div class="invalid-feedback"></div>
                         </div>
@@ -145,7 +145,7 @@
                         </div> --}}
 
                         <div class="form-group">
-                            <label class="input-label">{{ trans('public.description') }}</label>
+                            <label class="input-label">{{ trans('public.description') }} <span style='color:red;'>*</span></label>
                             <textarea name="ajax[{{ !empty($session) ? $session->id : 'new' }}][description]" class="js-ajax-description form-control" rows="6">{{ !empty($session) ? $session->description : '' }}</textarea>
                             <div class="invalid-feedback"></div>
                         </div>

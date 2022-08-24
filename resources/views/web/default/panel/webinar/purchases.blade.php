@@ -61,7 +61,7 @@
                     <div class="row mt-30">
                         <div class="col-12">
                             <div class="webinar-card webinar-list d-flex">
-                                <div class="image-box">
+                                <a class="image-box" href="{{ $item->getUrl() }}">
                                     <img src="{{ $item->getImage() }}" class="img-cover" alt="">
 
                                     @if(!empty($sale->webinar))
@@ -99,7 +99,7 @@
                                     @else
                                         <span class="badge badge-secondary">{{ trans('update.bundle') }}</span>
                                     @endif
-                                </div>
+                                </a>
 
                                 <div class="webinar-card-body w-100 d-flex flex-column">
                                     <div class="d-flex align-items-center justify-content-between">

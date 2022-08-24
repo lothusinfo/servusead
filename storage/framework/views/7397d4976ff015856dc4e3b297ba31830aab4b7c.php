@@ -96,13 +96,13 @@
                         
 
                         <div class="form-group">
-                            <label class="input-label"><?php echo e(trans('public.title')); ?></label>
+                            <label class="input-label"><?php echo e(trans('public.title')); ?> <span style='color:red;'>*</span></label>
                             <input type="text" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][title]" class="js-ajax-title form-control" value="<?php echo e(!empty($session) ? $session->title : ''); ?>" placeholder="<?php echo e(trans('forms.maximum_255_characters')); ?>"/>
                             <div class="invalid-feedback"></div>
                         </div>
 
                         <div class="form-group">
-                            <label class="input-label"><?php echo e(trans('public.date')); ?></label>
+                            <label class="input-label"><?php echo e(trans('public.date')); ?> <span style='color:red;'>*</span></label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="dateRangeLabel">
@@ -115,7 +115,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="input-label"><?php echo e(trans('public.duration')); ?> <span class="braces">(<?php echo e(trans('public.minutes')); ?>)</span></label>
+                            <label class="input-label"><?php echo e(trans('public.duration')); ?> <span class="braces">(<?php echo e(trans('public.minutes')); ?>)</span> <span style='color:red;'>*</span></label>
                             <input type="text" name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][duration]" class="js-ajax-duration form-control" value="<?php echo e(!empty($session) ? $session->duration : ''); ?>" <?php echo e((!empty($session) and $session->session_api != 'local') ? 'disabled' :''); ?>/>
                             <div class="invalid-feedback"></div>
                         </div>
@@ -123,7 +123,7 @@
                         
 
                         <div class="form-group">
-                            <label class="input-label"><?php echo e(trans('public.description')); ?></label>
+                            <label class="input-label"><?php echo e(trans('public.description')); ?> <span style='color:red;'>*</span></label>
                             <textarea name="ajax[<?php echo e(!empty($session) ? $session->id : 'new'); ?>][description]" class="js-ajax-description form-control" rows="6"><?php echo e(!empty($session) ? $session->description : ''); ?></textarea>
                             <div class="invalid-feedback"></div>
                         </div>

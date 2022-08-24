@@ -61,7 +61,7 @@
                     <div class="row mt-30">
                         <div class="col-12">
                             <div class="webinar-card webinar-list d-flex">
-                                <div class="image-box">
+                                <a class="image-box" href="<?php echo e($item->getUrl()); ?>">
                                     <img src="<?php echo e($item->getImage()); ?>" class="img-cover" alt="">
 
                                     <?php if(!empty($sale->webinar)): ?>
@@ -99,7 +99,7 @@
                                     <?php else: ?>
                                         <span class="badge badge-secondary"><?php echo e(trans('update.bundle')); ?></span>
                                     <?php endif; ?>
-                                </div>
+                                </a>
 
                                 <div class="webinar-card-body w-100 d-flex flex-column">
                                     <div class="d-flex align-items-center justify-content-between">
