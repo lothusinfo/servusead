@@ -69,6 +69,10 @@
                     @endif
                 </a>
             </div>
+            <div class="">
+                <a href="https://lothus.app.br/" target="_blank" style="color:white">Lothus Informática LTDA
+                </a>
+            </div>
             <div class="footer-social">
                 @if(!empty($socials) and count($socials))
                     @foreach($socials as $social)
